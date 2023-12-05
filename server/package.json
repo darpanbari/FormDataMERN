@@ -2,7 +2,6 @@
   "name": "formdesign",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "type": "module",
   "engines": {
     "node": "v20.4.0"
