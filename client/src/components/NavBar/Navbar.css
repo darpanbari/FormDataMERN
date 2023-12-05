@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #fe6777 !important;
+  z-index: 5 !important;
+}
+.nav-link {
+  font-weight: 400 !important;
+  color: white !important;
+  font-size: 17px !important;
+  padding: 0px 20px !important;
+  border-right: 2px solid white !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.nav-link:hover {
+  color: #c70039 !important;
+  border-color: #C70039 !important;
+}
+.active {
+    color: #C70039 !important;
+    border-right: 4px solid #C70039 !important;
+    font-weight: 600 !important;
+
+  }
+.navbar-toggler {
+    padding: 1px 10px !important;
+}

@@ -1,0 +1,47 @@
+body {
+  background-color: #f2f8ff !important;
+}
+.text-pink {
+  color: #fe6777 !important;
+}
+.bg-pink {
+  background-color: #fe6777 !important;
+}
+.bg-gray{
+  background-color: rgb(229, 229, 229) !important;
+}
+.custom-shadow {
+  box-shadow: 0 6px 30px rgba(182, 186, 203, 0.3) !important;
+}
+.custom-shadow:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.069), 0 16px 32px rgba(0, 0, 0, 0.093) !important;
+}
+.btn{
+  color: #ffff !important;
+}
+.btn:hover{
+  color: black !important;
+  font-weight: 600;
+}
+.card-title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+label{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+table, th, td{
+  vertical-align: middle;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.customer-page {
+  margin: 50px !important;
+}
+
+@media (max-width: 720px) {
+  .customer-page {
+    margin: 20px !important;
+  }
+}
