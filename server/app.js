@@ -30,3 +30,4 @@ mongoose.connect(process.env.MONGO_URL)
     console.error("Error connecting to the database: ", err);
   });
 
+  console.log('Current working directory:', process.cwd());
