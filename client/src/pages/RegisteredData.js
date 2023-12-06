@@ -5,9 +5,12 @@ import { format } from "date-fns";
 import { Button } from "react-bootstrap";
 import { BiSolidDownload } from "react-icons/bi";
 import { BASE_URL } from "../services/helper";
+import "hover.css/css/hover-min.css";
+import { GridLoader } from "react-spinners";
 
 const RegisteredData = () => {
   const [allData, setAllData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAllData = async () => {
     try {
@@ -16,9 +19,11 @@ const RegisteredData = () => {
       );
       if (data) {
         setAllData(data.data);
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -54,6 +59,11 @@ const RegisteredData = () => {
       <div>
         <TopNavbar />
         <div className="customer-page">
+        {loading && ( // Display loader when loading is true
+            <div className="loader-container">
+              <GridLoader color="#fe6777" />
+            </div>
+          )}
           <div className="table-responsive custom-shadow">
             <table className="table table-hover table-bordered mb-0">
               <thead className="table-head">
@@ -70,7 +80,7 @@ const RegisteredData = () => {
               </thead>
               <tbody>
                 {allData.map((data, i) => (
-                  <tr key={i} className="custom-shadow">
+                  <tr key={i} className="hover-effect ">
                     <td>{i + 1}</td>
                     <td style={{ minWidth: "120px" }}>{data.name}</td>
                     <td style={{ minWidth: "120px" }}>
@@ -84,7 +94,7 @@ const RegisteredData = () => {
                     <td className="text-center">
                       <Button
                         type="button"
-                        className="btn bg-pink border-0"
+                        className="btn bg-pink border-0 hvr-wobble-skew"
                         style={{ width: "180px", fontSize: "12px" }}
                         onClick={() =>
                           downloadResume(

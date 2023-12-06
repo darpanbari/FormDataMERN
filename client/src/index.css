@@ -7,37 +7,98 @@ body {
 .bg-pink {
   background-color: #fe6777 !important;
 }
-.bg-gray{
+.bg-gray {
   background-color: rgb(229, 229, 229) !important;
 }
 .custom-shadow {
   box-shadow: 0 6px 30px rgba(182, 186, 203, 0.3) !important;
 }
-.custom-shadow:hover{
+.custom-shadow:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.069), 0 16px 32px rgba(0, 0, 0, 0.093) !important;
 }
-.btn{
+.btn {
   color: #ffff !important;
 }
-.btn:hover{
-  color: black !important;
+.btn:hover {
+  /* color: black !important; */
   font-weight: 600;
 }
-.card-title{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.card-title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-label{
-  font-family: 'Courier New', Courier, monospace;
+label {
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
 }
-table, th, td{
+table,
+th,
+td {
   vertical-align: middle;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+tr:hover{
+  color: rgb(179, 0, 0) !important;
+} 
+
+/* btn */
+.btn_hover {
+  position: relative;
+  overflow: hidden;
+}
+.btn_hover button {
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+.btn_hover button:before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  /*float: right;*/
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+.btn_hover button:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+/* table */
+
+.hover-effect {
+  transition:  background-color 0.3s;
+}
+
+.hover-effect:hover {
+  /* box-shadow: 0 0 10px rgba(242, 8, 8, 0.2); */
+  /* border: #f2f8ff; */
+  /* opacity: 0.9; */
+  transform: scaleY(1.10);
+ /* Adjust the scale factor as needed */
+}
+
+.table {
+  --bs-table-hover-bg: #ffe4e7b6!important;
 }
 
 .customer-page {
   margin: 50px !important;
+}
+
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
 
 @media (max-width: 720px) {
