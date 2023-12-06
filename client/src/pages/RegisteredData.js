@@ -58,8 +58,8 @@ const RegisteredData = () => {
     <>
       <div>
         <TopNavbar />
-        <div className="customer-page">
-        {loading && ( // Display loader when loading is true
+        <div className="customer-page1">
+        {loading && ( 
             <div className="loader-container">
               <GridLoader color="#fe6777" />
             </div>

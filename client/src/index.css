@@ -89,7 +89,7 @@ tr:hover{
   --bs-table-hover-bg: #ffe4e7b6!important;
 }
 
-.customer-page {
+.customer-page1 {
   margin: 50px !important;
 }
 
@@ -103,6 +103,9 @@ tr:hover{
 
 @media (max-width: 720px) {
   .customer-page {
-    margin: 10px !important;
+    width: 100% !important;
+  }
+  .customer-page1{
+    margin: 50px 10px !important;
   }
 }

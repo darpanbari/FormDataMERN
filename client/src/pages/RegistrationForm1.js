@@ -112,15 +112,16 @@ const RegistrationForm = () => {
         style={{ margin: "70px 0px" }}
       >
         <div
-          className="card mx-2 px-5 py-4 mb-5 w-75 custom-shadow border-0"
+          className="card mx-2 px-5 py-4 mb-5 custom-shadow border-0 customer-page"
+          style={{width:"70%"}}
         >
           <Row>
-            <Col xl={6} >
-              <Container className="img" >
+            <Col xl={6} className="d-flex align-items-center justify-content-center">
+              <Container className="img " >
                 <img
                   src="/register.jpg"
                   alt="Image"
-                  className="img-fluid"
+                  className="img-fluid "
                   data-aos="fade-down"
                 />
               </Container>
