@@ -4,6 +4,7 @@ import TopNavbar from "../components/NavBar/Navbar";
 import { format } from "date-fns";
 import { Button } from "react-bootstrap";
 import { BiSolidDownload } from "react-icons/bi";
+import { BASE_URL } from "../services/helper";
 
 const RegisteredData = () => {
   const [allData, setAllData] = useState([]);
@@ -11,7 +12,7 @@ const RegisteredData = () => {
   const getAllData = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:3030/registration/get-Data"
+        `${BASE_URL}/registration/get-Data`
       );
       if (data) {
         setAllData(data.data);

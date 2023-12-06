@@ -44,6 +44,7 @@ export const registerController = async (req, res) => {
         res.status(201).send({
           success: true,
           message: 'User Registered Successfully',
+          path: `${process.env.BASE_URL_}/uploads/`,
           user,
         });
       } catch (error) {
@@ -73,6 +74,7 @@ export const getDataController = async (req, res) => {
         success: true,
         data: data,
         message: "Data Fetch Successfully",
+        path: `${process.env.BASE_URL_}/uploads/`,
       });
     }
   } catch (err) {

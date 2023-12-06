@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TopNavbar from "../components/NavBar/Navbar";
 import { Form, Button, Col, Row, Container, InputGroup } from "react-bootstrap";
 import axios from "axios";
+import { BASE_URL } from "../services/helper";
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -13,6 +14,23 @@ const RegistrationForm = () => {
   const [resume, setResume] = useState(null);
 
   const [hobbiesWarning, setHobbiesWarning] = useState(false);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const allowedExtensions = ["docx"];
+
+      const fileExtension = file.name.split(".").pop().toLowerCase();
+      if (!allowedExtensions.includes(fileExtension)) {
+        alert("Please upload a valid DOCX file.");
+        e.target.value = null;
+        setResume(null);
+        return;
+      }
+      setResume(file);
+    }
+  };
 
   const handleHobbiesChange = (e) => {
     const { value } = e.target;
@@ -44,12 +62,8 @@ const RegistrationForm = () => {
       formDataToSend.append("address", address);
       formDataToSend.append("resume", resume);
 
-      await axios.post(
-        "http://localhost:3030/registration/register",
-        formDataToSend
-      );
+      await axios.post(`${BASE_URL}/registration/register`, formDataToSend);
 
-      // Reset form fields
       setName("");
       setDateOfBirth("");
       setGender("");
@@ -217,11 +231,14 @@ const RegistrationForm = () => {
                     <InputGroup>
                       <Form.Control
                         type="file"
-                        accept=".docx"
-                        onChange={(e) => setResume(e.target.files[0])}
+                        // accept=".docx"
+                        onChange={handleFileChange}
                         required
                       />
                     </InputGroup>
+                    <Form.Text className="text-muted">
+                      Upload a DOCX file only.
+                    </Form.Text>
                   </Form.Group>
                 </Col>
               </Row>
@@ -236,13 +253,13 @@ const RegistrationForm = () => {
                   </Button>
                 </Col>
                 <Col md={6}>
-                <Button
-            type="button"
-            className="btn bg-gray w-100 border-0 mb-2"
-            onClick={handleCancel}
-          >
-            Cancel
-          </Button>
+                  <Button
+                    type="button"
+                    className="btn bg-gray w-100 border-0 mb-2"
+                    onClick={handleCancel}
+                  >
+                    Cancel
+                  </Button>
                 </Col>
               </Row>
             </Form>

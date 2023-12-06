@@ -42,6 +42,6 @@ table, th, td{
 
 @media (max-width: 720px) {
   .customer-page {
-    margin: 20px !important;
+    margin: 10px !important;
   }
 }
